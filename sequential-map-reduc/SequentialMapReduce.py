@@ -22,4 +22,4 @@ def find_top_words(data):
 
 print(find_top_words(data))
 
-print(time.process_time())
+print(time.process_time(), " Seconds")
