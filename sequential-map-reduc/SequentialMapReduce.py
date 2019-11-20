@@ -1,7 +1,6 @@
 import time
 import re
 from collections import Counter
-from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
 
 data = open("kanye_verses.txt", "r")
