@@ -9,7 +9,7 @@ def find_longest_string(list_of_strings):
             longest_string = s
     return longest_string
 
-list_of_strings = ['abc', 'python', 'dima']
+list_of_strings = ['abc', 'python', 'dima']*100000000
 print(find_longest_string(list_of_strings))
 
 print(time.process_time())
