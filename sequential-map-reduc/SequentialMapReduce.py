@@ -4,7 +4,7 @@ from collections import Counter
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
 
-data = open("test.txt", "r")
+data = open("kanye_verses.txt", "r")
 
 def clean_word(word):
     return re.sub(r'[^\w\s]','',word).lower()
