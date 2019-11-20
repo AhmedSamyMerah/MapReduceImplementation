@@ -6,7 +6,7 @@ import time
 def file_to_words(filename):
     STOP_WORDS = set([
             'a', 'an', 'and', 'are', 'as', 'be', 'by', 'for', 'if', 'in', 
-            'is', 'it', 'i', 't','s','on','m','of', 'or', 'py', 'rst', 'that', 'the',
+            'is', 'it', 'i', 't','s','on','m','of', 'or', 'py', 'rst', 'that', 'the', 'but'
             ])
     TR = str.maketrans(string.punctuation, ' ' * len(string.punctuation))
 
@@ -47,4 +47,5 @@ if __name__ == '__main__':
     for word, count in top10:
         print ('%-*s: %5s' % (longest+1, word, count))
 
+#time in seconds
 print(time.process_time(), " Seconds")
