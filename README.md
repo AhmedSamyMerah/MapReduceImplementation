@@ -4,6 +4,8 @@
 
 Language choice for each version (sequential & distributed) -> Python for both implementations
 
+Approach of distributed way: Multiprocessor, because to be honest we took the easy way out with the tutorial, sowwie.
+
 Output for sequential:
 ![Out1](output1.png)
 
