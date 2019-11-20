@@ -1,11 +1,12 @@
 import multiprocessing
 import string
 import SimpleMapReduce
+import time
 
 def file_to_words(filename):
     STOP_WORDS = set([
             'a', 'an', 'and', 'are', 'as', 'be', 'by', 'for', 'if', 'in', 
-            'is', 'it', 'i', 't','s','on','m','of', 'or', 'py', 'rst', 'that', 'the', 'to', 'with',
+            'is', 'it', 'i', 't','s','on','m','of', 'or', 'py', 'rst', 'that', 'the',
             ])
     TR = str.maketrans(string.punctuation, ' ' * len(string.punctuation))
 
@@ -40,9 +41,10 @@ if __name__ == '__main__':
     word_counts.sort(key=operator.itemgetter(1))
     word_counts.reverse()
     
-    print ('\nTOP 20 WORDS BY FREQUENCY\n')
-    top20 = word_counts[:20]
-    longest = max(len(word) for word, count in top20)
-    for word, count in top20:
+    print ('\nTOP 10 WORDS Kanye says\n')
+    top10 = word_counts[:10]
+    longest = max(len(word) for word, count in top10)
+    for word, count in top10:
         print ('%-*s: %5s' % (longest+1, word, count))
 
+print(time.process_time(), " Seconds")
