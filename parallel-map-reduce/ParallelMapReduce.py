@@ -5,9 +5,9 @@ import SimpleMapReduce
 def file_to_words(filename):
     STOP_WORDS = set([
             'a', 'an', 'and', 'are', 'as', 'be', 'by', 'for', 'if', 'in', 
-            'is', 'it', 'of', 'or', 'py', 'rst', 'that', 'the', 'to', 'with',
+            'is', 'it', 'i', 't','s','on','m','of', 'or', 'py', 'rst', 'that', 'the', 'to', 'with',
             ])
-    TR = string.maketrans(string.punctuation, ' ' * len(string.punctuation))
+    TR = str.maketrans(string.punctuation, ' ' * len(string.punctuation))
 
     print (multiprocessing.current_process().name, 'reading', filename)
     output = []
@@ -33,9 +33,9 @@ if __name__ == '__main__':
     import operator
     import glob
 
-    input_files = glob.glob('*.rst')
+    input_files = glob.glob('*.txt')
     
-    mapper = SimpleMapReduce(file_to_words, count_words)
+    mapper = SimpleMapReduce.SimpleMapReduce(file_to_words, count_words)
     word_counts = mapper(input_files)
     word_counts.sort(key=operator.itemgetter(1))
     word_counts.reverse()
@@ -45,3 +45,4 @@ if __name__ == '__main__':
     longest = max(len(word) for word, count in top20)
     for word, count in top20:
         print ('%-*s: %5s' % (longest+1, word, count))
+
