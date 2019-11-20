@@ -1,15 +1,12 @@
 import time
+import re
+from collections import Counter
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.stop_words import ENGLISH_STOP_WORDS
 
-def find_longest_string(list_of_strings):
-    longest_string = None
-    longest_string_len = 0 
-    for s in list_of_strings:
-        if len(s) > longest_string_len:
-            longest_string_len = len(s)
-            longest_string = s
-    return longest_string
+data = open("test.txt", "r")
 
-list_of_strings = ['abc', 'python', 'dima']*100000000
-print(find_longest_string(list_of_strings))
-
-print(time.process_time())
+def clean_word(word):
+    return re.sub(r'[^\w\s]','',word).lower()
+def word_not_in_stopwords(word):
+    return word not in ENGLISH_STOP_WORDS and word and word.isalpha()
